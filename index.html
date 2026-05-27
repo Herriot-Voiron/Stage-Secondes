@@ -748,7 +748,7 @@ function buildJournal(fromButton) {
 
         <div class="day-photo" id="photo-${key}">
           <label class="photo-drop">📷 Ajouter une photo de la journée
-            <input type="file" accept="image/*" capture="environment" style="display:none" onchange="addPhoto(this, '${key}')">
+            <input type="file" accept="image/*" style="display:none" onchange="addPhoto(this, '${key}')">
           </label>
         </div>
 
@@ -866,7 +866,7 @@ function addPhoto(input, key) {
 }
 function removePhoto(key) {
   const wrap = document.getElementById('photo-' + key);
-  wrap.innerHTML = `<label class="photo-drop">📷 Ajouter une photo de la journée<input type="file" accept="image/*" capture="environment" style="display:none" onchange="addPhoto(this, '${key}')"></label>`;
+  wrap.innerHTML = `<label class="photo-drop">📷 Ajouter une photo de la journée<input type="file" accept="image/*" style="display:none" onchange="addPhoto(this, '${key}')"></label>`;
   const block = document.getElementById('day-' + key);
   if (block) {
     const filled = [...block.querySelectorAll('textarea, input')].some(el => el.value && el.value.trim() !== '');
